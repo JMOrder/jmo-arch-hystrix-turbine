@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: hystrix-turbine
+server:
+  port: 8081
+hystrix:
+  dashboard:
+    proxyStreamAllowList: "*"
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+turbine:
+  appConfig: user-service,auth-service
+  clusterNameExpression: new String("default")
+  InstanceMonitor.eventStream.skipLineLogic.enabled: false
