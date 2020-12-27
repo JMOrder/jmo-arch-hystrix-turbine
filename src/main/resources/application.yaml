@@ -27,6 +27,6 @@ endpoints:
     enabled: true
 
 turbine:
-  appConfig: user-service,auth-service
+  appConfig: main-service, auth-service, chat-service
   clusterNameExpression: new String("default")
   InstanceMonitor.eventStream.skipLineLogic.enabled: false
